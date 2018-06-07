@@ -1,0 +1,24 @@
+.app-user-profile header {
+    background: #92c2cb;
+    padding: 14px 20px;
+    font-size: 18px;
+    color: #1e7d8e;
+    font-weight: 400;
+}
+
+.app-user-profile section {
+    margin-bottom: 8px;
+}
+
+.app-user-profile .contents {
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    color: #444;
+}
+
+.app-user-profile .position {
+    font-weight: bold;
+    font-size: 110%;
+    margin-bottom: 10px;
+}

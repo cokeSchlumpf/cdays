@@ -4,6 +4,7 @@ import { Button, Container, Menu, Segment, Visibility } from 'semantic-ui-react'
 import React, { Component } from 'react';
 
 import DoodyChat from '../DoodyChat';
+import UserProfile from "../../elements/UserProfile/index";
 
 const FixedMenu = () => (
     <Menu fixed='top' size='large'>
@@ -35,7 +36,7 @@ class App extends Component {
                 </div>
                 <div className="app-main-container">
                     <div className="app-sidebar-left">
-                        left
+                        <UserProfile/>
                     </div>
                     <div className="app-main">
                     </div>
