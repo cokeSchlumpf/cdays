@@ -51,5 +51,23 @@
     background: #e7f1f3;
     align-items: flex-start;
     max-width: 22%;
+}
 
+.app-main-widgets {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0 6px;
+}
+
+.app-main-widgets .widget {
+    flex-grow: 1;
+}
+
+.app-main-widgets .widget:first-of-type {
+    margin-right: 6px;
+}
+
+.app-main-widgets .widget:last-of-type {
+    margin-left: 6px;
 }
