@@ -11,13 +11,11 @@ export default class NextAction extends React.Component {
     render () {
         return (
             <div className="widget">
-
                 <header>NEXT BEST ACTIONS</header>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi neque nihil obcaecati possimus
-                    recusandae, repudiandae soluta. Enim eum exercitationem maiores vero! Animi dolores eveniet
-                    inventore modi numquam rerum saepe?</p>
-
+                <div className="inner">
+                    <p><strong>Vertragsanebot schreiben</strong></p>
+                    <p>Vertragsanebot an den Kunden via Post versenden <Button color="red" size="small">GO!</Button></p>
+                </div>
             </div>
         );
 

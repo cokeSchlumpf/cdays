@@ -48,10 +48,18 @@ class App extends Component {
                         </Grid.Column>
 
                         <Grid.Column className="app-main">
-                            <div className="app-main-widgets">
-                                <NextAction/>
-                                <Sentiment/>
-                            </div>
+
+                            <Grid columns={2} stretched className="app-main-widgets">
+                                <Grid.Row>
+                                    <Grid.Column>
+                                        <NextAction/>
+                                    </Grid.Column>
+                                    <Grid.Column>
+                                        <Sentiment/>
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
+
                             <div className="app-main-timeline">
                                 <Timeline/>
                             </div>

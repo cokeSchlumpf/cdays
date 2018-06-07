@@ -1,6 +1,6 @@
 import React from 'react';
 import * as PropTypes from "prop-types";
-import { Button, Segment } from "semantic-ui-react";
+import { Button, Image, Segment } from "semantic-ui-react";
 
 export default class Sentiment extends React.Component {
 
@@ -11,13 +11,10 @@ export default class Sentiment extends React.Component {
     render () {
         return (
             <div className="widget">
-
                 <header>SENTIMENT</header>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi neque nihil obcaecati possimus
-                    recusandae, repudiandae soluta. Enim eum exercitationem maiores vero! Animi dolores eveniet
-                    inventore modi numquam rerum saepe?</p>
-
+                <div className="inner">
+                    <Image src="sentiment.png" style={{maxHeight: '90px'}}/>
+                </div>
             </div>
         );
 
