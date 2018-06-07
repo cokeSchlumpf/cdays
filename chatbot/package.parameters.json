@@ -8,7 +8,22 @@
         "output": {
           "action": "channels-http-output"
         }
+      },
+      "facebook": {
+        "input": {
+          "action": "channels-facebook-input"
+        },
+        "output": {
+          "action": "channels-facebook-output"
+        },
+        "newuser": {
+          "action": "channels-facebook-newuser"
+        }
       }
+    },
+    "facebook": {
+      "verify_token": "af10ccfc40",
+      "access_token": "EAAdKQ8xVXVABAPIgURL4kSWSu9gNWV3uIAAJOMKJd2ZCa8X0Q6RfmjeX8ZCV710gCRgM04kAUfZBm9R70uWAQJ2E8BplXPcV9OL8cgwQPFBnHZC49193sW08aKEGYt5OPTax3dGOcZBbTORI10qhndV4XbCkBis5lxjrPWtSWJAZDZD"
     },
     "messages_transformer": "cdays-bot-ext/core-transform-signals",
     "messages": {
