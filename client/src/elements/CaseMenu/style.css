@@ -6,7 +6,7 @@
     background: linear-gradient(left, #54a0ae, #117b90, #117b90);
     width: 200px;
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 10px;
     padding-left: 16px;
 }
 
@@ -21,6 +21,12 @@
     margin-right: 6px;
     width: 220px;
     background: linear-gradient(left, #54a0ae, #117b90, #117b90);
+    transition: background .4s;
+}
+
+.app-case-menu .cases .case:hover {
+    cursor: pointer;
+    background: linear-gradient(left, #54a0ae, #54a0ae, #54a0ae);
 }
 
 .app-case-menu .cases .case.selected {
