@@ -1,0 +1,36 @@
+{
+  "config": {
+    "connectors": {
+      "http": {
+        "input": {
+          "action": "channels-http-input"
+        },
+        "output": {
+          "action": "channels-http-output"
+        }
+      }
+    },
+    "messages_transformer": "cdays-bot-ext/core-transform-signals",
+    "messages": {
+      "$action": "cdays-bot-ext/messages"
+    },
+    "middleware": [
+      {
+        "action": "cdays-bot-ext/middleware-timeofday",
+        "parameters": {}
+      },
+      { 
+        "action": "middleware-static-message",
+        "parameters": {
+          "message": "Hello World!"
+        }
+      },
+      {
+        "action": "middleware-output-send"
+      }
+    ],
+    "openwhisk": {
+      "package": "cdays-bot"
+    }
+  }
+}

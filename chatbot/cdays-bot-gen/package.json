@@ -1,0 +1,16 @@
+{
+  "name": "cdays-bot-ext",
+  "version": "1.0.0",
+  "description": "Custom middleware actions for CDays Bot",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "openwhisk-action-manager": "0.0.6"
+  },
+  "scripts": {
+    "deploy": "openwhisk-action-manager",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
