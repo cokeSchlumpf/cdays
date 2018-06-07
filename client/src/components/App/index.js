@@ -12,6 +12,7 @@ import Timeline from "../../elements/Timeline/index";
 import CaseMenu from "../../elements/CaseMenu/index";
 import LifeEvents from "../../elements/LifeEvents/index";
 import Interests from "../../elements/Interests/index";
+import Chat from "../../components/Chat/index";
 
 const FixedMenu = () => (
     <Menu fixed='top' size='large'>
@@ -75,6 +76,11 @@ class App extends Component {
 
                     </Grid.Row>
                 </Grid>
+
+                <div className="app-chat-wrapper">
+                    <Chat/>
+                </div>
+
             </div>
         );
     }
