@@ -1,0 +1,10 @@
+{
+  "environment": "dev",
+  "morganformat": "dev",
+  "admins": [
+    "michael.wellner@googlemail.com"
+  ],
+  "server": {
+    "port": 3010
+  }
+}

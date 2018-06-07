@@ -1,0 +1,216 @@
+.doody-chat-container.ui.container {
+  margin-top: 80px;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  margin-bottom: 80px;
+
+  text-align: left;
+}
+
+.doody-chat-container img.doody-chat-logo {
+  height: 80px;
+}
+
+.doody-chat-container .ui.segment.doody-bubble,
+.doody-chat-container .segment.doody-bubble {
+  position: relative;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 1em;
+  font-weight: 300;
+  padding: .67857143em 1em;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  line-height: 1.21428571em;
+  overflow: hidden;
+
+  background-color: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+
+.doody-chat-container .doody-bubble-transition {
+  margin-bottom: 28px;
+}
+
+.doody-chat-container .doody-bubble-transition:last-child {
+  margin-bottom: 0;
+}
+
+.doody-chat-container .doody-bubble-transition-enter.doody-bubble-transition-enter-active {
+  animation: bubble-show 1s;
+}
+
+@keyframes bubble-show {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  50% {
+    overflow: hidden;
+    max-height: 100px;
+  }
+
+  100% {
+    overflow: visible;
+    max-height: 100px;
+    opacity: 1;
+  }
+}
+
+.doody-chat-container .doody-bubble-transition-leave.doody-bubble-transition-leave-active {
+  animation: bubble-hide 2s;
+}
+
+@keyframes bubble-hide {
+  0% {
+    overflow: hidden;
+    max-height: 100px;
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  50% {
+    opacity: 0;
+    max-height: 0px;
+    overflow: hidden;
+  }
+
+  100% {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+}
+
+.doody-chat-container .ui.segment.user-bubble,
+.doody-chat-container .segment.user-bubble {
+  position: relative;
+  font-size: 1em;
+  font-weight: 300;
+  padding: .67857143em 1em;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  line-height: 1.21428571em;
+
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.doody-chat-container .typing-text {
+  position: absolute;
+  top: -27px;
+  left: 128px;
+  font-size: 0.7em;
+  color: #fff;
+
+  animation: doody-typing-text 1.5s infinite;
+}
+
+@keyframes doody-typing-text {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.doody-chat-container .doody-bubbles {
+  position: relative;
+}
+
+.doody-chat-container .doody-bubbles.typing:before,
+.doody-chat-container .doody-bubbles.with-messages:before {
+  content: '• • •';
+  position: absolute;
+  display: block;
+
+  top: -45px;
+  left: 112px;
+  width: 5px;
+  height: 5px;
+  overflow: visible;
+  line-height: 10px;
+  color: #fff;
+  text-align: 'center';
+  font-weight: bold;
+}
+
+.doody-chat-container .doody-bubbles.typing:after {
+  content: '• • •';
+  position: absolute;
+  display: block;
+
+  top: -45px;
+  left: 112px;
+  width: 5px;
+  height: 5px;
+  overflow: visible;
+  line-height: 10px;
+  color: #234B7C;
+  text-align: 'center';
+  font-weight: bold;
+
+  animation: doody-typing 1.5s infinite;
+}
+
+@keyframes doody-typing {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.doody-chat-container .user-bubbles-history {
+  position: relative;
+}
+
+.doody-chat-container .user-bubbles-history .ui.segment.user-bubble, 
+.doody-chat-container .user-bubbles-history .segment.user-bubble {
+  position: absolute;
+  bottom: 0;
+  right: 14px;
+  left: 14px;
+
+  opacity: 0.5;
+}
+
+.doody-chat-container .user-bubbles-history .ui.segment.user-bubble .user-bubbles-sent {
+  position: absolute;
+  font-size: 0.7em;
+  bottom: -2.2em;
+  right: 0;
+  color: #fff;
+
+  animation: history-show 1s;
+}
+
+@keyframes history-show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}

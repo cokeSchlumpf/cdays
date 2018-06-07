@@ -1,0 +1,6 @@
+applications:
+- name: dev-doody
+  command: npm run start:dep
+  memory: 256M
+  env:
+    NODE_ENV: bluemix

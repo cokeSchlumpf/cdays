@@ -1,0 +1,12 @@
+.ui.form .ui.action.input.doody-userinput input[type=text] {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+
+  font-size: 1.2em;
+  margin-left: 30px;
+}
+
+.doody-chat-container .ui.form .ui.action.input.doody-userinput button.ui.icon.button {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}

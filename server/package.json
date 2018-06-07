@@ -1,0 +1,85 @@
+{
+  "name": "node-express-es6-starter",
+  "version": "0.4.2",
+  "description": "A sample Node.js app using Express 4",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint \"./**/*.js\"",
+    "lint": "npm run lint",
+    "start:dev": "NODE_ENV=development nodemon --watch views --watch middleware --watch redux --watch utils --watch api --watch src --watch public --watch server.js -e js,html,css --exec babel-node server.js",
+    "start:dep": "babel-node server.js",
+    "start": "npm run start:dev",
+    "test": "mocha --compilers js:babel-core/register",
+    "todo": "leasot ./src/**/*.js server.js --tags error,info || true"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "6.18.2",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-import-export": "^1.0.2",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "cfenv": "^1.0.4",
+    "config": "^1.27.0",
+    "cookie-parser": "^1.4.3",
+    "express": "4.14.0",
+    "express-healthcheck": "^0.1.0",
+    "express-session": "^1.15.6",
+    "gulp-messenger": "^0.25.3",
+    "indent-string": "^3.2.0",
+    "lodash": "^4.17.2",
+    "morgan": "^1.9.0",
+    "redux": "^3.7.2",
+    "redux-immutable-combine-reducers": "^0.1.1",
+    "redux-logger": "^3.0.6",
+    "redux-observable": "^0.17.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "rxjs": "^5.5.2",
+    "socket.io": "^2.0.4",
+    "twig": "0.10.1",
+    "uuid": "^3.1.0",
+    "winston": "^2.4.0"
+  },
+  "engines": {
+    "node": "6.10.0",
+    "npm": "3.10.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeerickson/node-express-es6-starter.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0",
+      "import-export"
+    ],
+    "ignore": [
+      "node_modules"
+    ]
+  },
+  "author": "Mike Erickson <codedungeon@mail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "eslint": "3.10.2",
+    "leasot": "4.2.0",
+    "mocha": "3.1.2",
+    "nodemon": "1.11.0",
+    "todo-webpack-plugin": "1.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/mikeerickson/node-express-es6-starter/issues"
+  },
+  "homepage": "https://github.com/mikeerickson/node-express-es6-starter#readme",
+  "directories": {
+    "test": "test"
+  },
+  "reveal": true
+}
