@@ -1,0 +1,33 @@
+.app-interests .inner {
+    padding: 20px;
+    font-size: 16px;
+}
+
+.app-interests .interest {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 6px 10px;
+    background: #237b8e;
+    color: #e2eaed;
+}
+
+.app-interests .inner .interests .interest {
+    background: #237b8e;
+    color: #e2eaed;
+}
+
+.app-interests .inner .potential .interest {
+    background: #d62a32;
+    color: #faf0f0;
+}
+
+.app-interests section .header {
+    color: #82b4b7;
+    margin-top: 22px;
+    margin-bottom: 18px;
+}
+
+.app-interests .tweets .tweet {
+    margin-bottom: 18px;
+}
