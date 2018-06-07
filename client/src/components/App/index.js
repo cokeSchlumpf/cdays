@@ -10,6 +10,7 @@ import NextAction from "../NextAction/index";
 import Sentiment from "../Sentiment/index";
 import Timeline from "../../elements/Timeline/index";
 import CaseMenu from "../../elements/CaseMenu/index";
+import LifeEvents from "../../elements/LifeEvents/index";
 
 const FixedMenu = () => (
     <Menu fixed='top' size='large'>
@@ -67,7 +68,7 @@ class App extends Component {
                         </Grid.Column>
 
                         <Grid.Column className="app-sidebar-right">
-                            right
+                            <LifeEvents/>
                         </Grid.Column>
 
                     </Grid.Row>
