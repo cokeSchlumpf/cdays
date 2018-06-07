@@ -7,7 +7,7 @@ html, body, div#root {
   padding: 0;
 
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .ui.segment {
@@ -55,3 +55,18 @@ html, body, div#root {
   bor
 }
 */
+
+.widget {}
+.widget header {
+    background: #92c2cb;
+    padding: 14px 20px;
+    font-size: 18px;
+    color: #1e7d8e;
+    font-weight: 400;
+}
+.widget .contents {
+    margin: 16px;
+    padding: 12px;
+    background: #fff;
+    color: #444;
+}

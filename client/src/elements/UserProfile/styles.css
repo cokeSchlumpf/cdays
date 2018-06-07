@@ -1,0 +1,9 @@
+.app-user-profile section {
+    margin-bottom: 8px;
+}
+
+.app-user-profile .position {
+    font-weight: bold;
+    font-size: 110%;
+    margin-bottom: 10px;
+}

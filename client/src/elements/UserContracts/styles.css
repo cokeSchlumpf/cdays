@@ -1,0 +1,47 @@
+.app-user-contracts .items {
+    margin-top: 20px;
+}
+
+.app-user-contracts .app-user-contracts-item {
+    line-height: 42px;
+    margin-bottom: 16px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: start;
+    padding-left: 16px;
+    position: relative;
+}
+
+.app-user-contracts .app-user-contracts-item .icon {
+    margin-right: 10px;
+    display: inline-block;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.app-user-contracts .app-user-contracts-item.health .icon {
+    font-size: 30px;
+    color: #d62a32;
+    background: #fff;
+    border: 2px solid #d62a32;
+}
+
+.app-user-contracts .app-user-contracts-item.home .icon {
+    background: #267cc7;
+    color: #fff;
+}
+
+.app-user-contracts .app-user-contracts-item.car .icon {
+    background: #01aca4;
+    color: #fff;
+}
+
+.app-user-contracts .app-user-contracts-item .caret {
+    position: absolute;
+    right: 20px;
+}
