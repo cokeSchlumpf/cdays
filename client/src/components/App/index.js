@@ -9,6 +9,7 @@ import UserContracts from "../../elements/UserContracts/index";
 import NextAction from "../NextAction/index";
 import Sentiment from "../Sentiment/index";
 import Timeline from "../../elements/Timeline/index";
+import CaseMenu from "../../elements/CaseMenu/index";
 
 const FixedMenu = () => (
     <Menu fixed='top' size='large'>
@@ -36,7 +37,7 @@ class App extends Component {
                     <div className="app-header-logo"></div>
                 </div>
                 <div className="app-cases-menu">
-                    Cases Menu
+                    <CaseMenu/>
                 </div>
                 <Grid columns={3} className="app-main-container">
 
