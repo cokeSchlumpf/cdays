@@ -1,0 +1,23 @@
+{
+  "name": "middleware-agent-integration-sendto",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/cokeSchlumpf/openwhisk-chatbot-framework",
+  "description": "A middleware to forward a message to agent otherwise a configured middleware-pipeline is executed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha *.test.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "openwhisk": "^3.15.0",
+    "request-promise": "^4.2.2",
+    "serverless-botpack-lib": "^1.0.21"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "mock-require": "^2.0.2",
+    "sinon": "^3.2.1"
+  }
+}

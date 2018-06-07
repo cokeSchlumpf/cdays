@@ -20,7 +20,7 @@ api.post('/', (req, res) => {
   } else {
     store.dispatch(actions.client.chat.receive(user_id, message))
     res.sendStatus(200);
-  }  
+  }
 });
 
 module.exports = api;

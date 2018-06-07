@@ -26,11 +26,13 @@
         }
       },
       {
-        "action": "middleware-output-send"
+        "action": "cdays-bot-ext/middleware-agent-sendto",
+        "parameters": {}
       }
     ],
     "openwhisk": {
-      "package": "cdays-bot"
+      "package": "cdays-bot",
+      "package_ext": "cdays-bot-ext"
     }
   }
 }

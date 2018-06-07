@@ -1,5 +1,5 @@
 applications:
-- name: dev-doody
+- name: cdays
   command: npm run start:dep
   memory: 256M
   env:
