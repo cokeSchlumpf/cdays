@@ -19,11 +19,7 @@ exports.main = (params) => {
       result: true,
       params: {
         payload: params.payload,
-        middleware: [
-          {
-            "action": "middleware-output-send"
-          }
-        ]
+        middleware: params.config.middleware_wcs
       }
     };
 

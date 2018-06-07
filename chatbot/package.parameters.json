@@ -45,6 +45,20 @@
         "parameters": {}
       }
     ],
+    "middleware_wcs": [
+      { 
+        "action": "middleware-services-wcs",
+        "parameters": {
+          "endpoint": "https://gateway-fra.watsonplatform.net/assistant/api",
+          "workspace": "df6d7df0-1c85-4a56-84f9-698a5970763b",
+          "username": "f606fcee-cc2b-4662-82bd-b135e9161661",
+          "password": "sKIdauAgGZiT"
+        }
+      },
+      {
+        "action": "middleware-output-send"
+      }
+    ],
     "openwhisk": {
       "package": "cdays-bot",
       "package_ext": "cdays-bot-ext"
