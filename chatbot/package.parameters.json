@@ -25,12 +25,22 @@
       "verify_token": "af10ccfc40",
       "access_token": "EAAdKQ8xVXVABAPIgURL4kSWSu9gNWV3uIAAJOMKJd2ZCa8X0Q6RfmjeX8ZCV710gCRgM04kAUfZBm9R70uWAQJ2E8BplXPcV9OL8cgwQPFBnHZC49193sW08aKEGYt5OPTax3dGOcZBbTORI10qhndV4XbCkBis5lxjrPWtSWJAZDZD"
     },
+	"cloudant": {
+	      "database": "facebook_connector_db",
+	      "url": "https://4a656eea-b092-43bc-b42f-d80086c79943-bluemix:e6e3f610039d061a7a5d17f2f56a52dd76d11a8669881f4690fe892dbdffbc5a@4a656eea-b092-43bc-b42f-d80086c79943-bluemix.cloudant.com"
+	},
     "messages_transformer": "cdays-bot-ext/core-transform-signals",
     "messages": {
       "$action": "cdays-bot-ext/messages"
     },
     "middleware": [
-      {
+	  {
+		"action": "middleware-user-load"
+	  },
+	  {
+		"action": "middleware-context-load"
+	  },
+	  {
         "action": "cdays-bot-ext/middleware-timeofday",
         "parameters": {}
       },
@@ -43,9 +53,18 @@
       {
         "action": "cdays-bot-ext/middleware-agent-sendto",
         "parameters": {}
-      }
+      },
+	  {
+	    "action": "middleware-context-persist"
+	  }
     ],
     "middleware_wcs": [
+  	  {
+  		"action": "middleware-user-load"
+  	  },
+  	  {
+  		"action": "middleware-context-load"
+  	  },
       { 
         "action": "middleware-services-wcs",
         "parameters": {
@@ -57,7 +76,10 @@
       },
       {
         "action": "middleware-output-send"
-      }
+      },
+	  {
+	    "action": "middleware-context-persist"
+	  }
     ],
     "openwhisk": {
       "package": "cdays-bot",
