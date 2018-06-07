@@ -10,7 +10,9 @@
     background-size: auto 70px;
     background-color: #dd2c31;
     background-position: 97% 8px;
-    margin-bottom: 4px;
+    position: fixed;
+    width: 100%;
+    border-bottom: 4px solid white;
 }
 
 .app-header-logo {
@@ -21,13 +23,19 @@
 }
 
 .app-cases-menu {
+    position: fixed;
+    width: 100%;
+    top: 76px;
     background: #117b90;
-    margin-bottom: 4px;
     color: #fff;
     line-height: 30px;
+    border-bottom: 4px solid white;
 }
 
 .app-main-container {
+    position: relative;
+    top: 110px;
+    z-index: -1;
 }
 
 .app-main-container .row {
