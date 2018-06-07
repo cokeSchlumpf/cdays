@@ -3,8 +3,9 @@ import actions from './redux/actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
-    const s = state.toJS();
-    return s.components.nextAction;
+    // const s = state.toJS();
+    // return s.components.sentiment;
+    return {};
 };
 
 const mapDispatchToProps = (dispatch) => {
