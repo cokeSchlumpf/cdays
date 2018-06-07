@@ -6,12 +6,34 @@ exports.main = (params) => {
   const ow = openwhisk();
   
   if (params.payload.input.message.includes("agent")) {
-    console.log("forward to agent")
+    const options = {
+      uri: `https://${params.config.cdays.api}/api/v1/messages`,
+      method: 'POST',
+      json: {
+        user_id: params.payload.input.user,
+        message: params.payload.input.message
+      }
+    };
 
-    return {
-      statusCode: 200,
-      payload: params.payload
-    }
+    console.log(JSON.stringify(params.payload, null, 2));
+
+    return rp(options).then(response => {
+      return {
+        statusCode: 200,
+        payload: params.payload
+      };
+    }).catch(error => {
+      return {
+        statusCode: 400,
+        error: {
+          message: 'Unable to send action to Facebook.',
+          parameters: {
+            error,
+            options
+          }
+        }
+      };
+    });
   } else {
     const invokeParams = {
       name: `${params.config.openwhisk.package}/core-middleware`,

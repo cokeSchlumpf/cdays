@@ -1,5 +1,8 @@
 {
   "config": {
+    "cdays": {
+      "api": "cdays.eu-de.mybluemix.net"
+    },
     "connectors": {
       "http": {
         "input": {
