@@ -8,6 +8,7 @@ import UserProfile from "../../elements/UserProfile/index";
 import UserContracts from "../../elements/UserContracts/index";
 import NextAction from "../NextAction/index";
 import Sentiment from "../Sentiment/index";
+import Timeline from "../../elements/Timeline/index";
 
 const FixedMenu = () => (
     <Menu fixed='top' size='large'>
@@ -50,7 +51,7 @@ class App extends Component {
                         </div>
 
                         <div className="app-main-timeline">
-                            timeline...
+                            <Timeline/>
                         </div>
 
                     </div>

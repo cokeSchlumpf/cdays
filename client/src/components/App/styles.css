@@ -71,3 +71,7 @@
 .app-main-widgets .widget:last-of-type {
     margin-left: 6px;
 }
+
+.app-main-timeline {
+    padding: 20px 30px;
+}
