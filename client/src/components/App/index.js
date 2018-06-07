@@ -1,6 +1,6 @@
 import './styles.css';
 
-import { Button, Container, Menu, Segment, Visibility } from 'semantic-ui-react';
+import { Button, Container, Grid, Menu, Segment, Visibility } from 'semantic-ui-react';
 import React, { Component } from 'react';
 
 import DoodyChat from '../DoodyChat';
@@ -38,27 +38,31 @@ class App extends Component {
                 <div className="app-cases-menu">
                     Cases Menu
                 </div>
-                <div className="app-main-container">
-                    <div className="app-sidebar-left">
-                        <UserProfile/>
-                        <UserContracts/>
-                    </div>
-                    <div className="app-main">
+                <Grid columns={3} className="app-main-container">
 
-                        <div className="app-main-widgets">
-                            <NextAction/>
-                            <Sentiment/>
-                        </div>
+                    <Grid.Row>
 
-                        <div className="app-main-timeline">
-                            <Timeline/>
-                        </div>
+                        <Grid.Column className="app-sidebar-left">
+                            <UserProfile/>
+                            <UserContracts/>
+                        </Grid.Column>
 
-                    </div>
-                    <div className="app-sidebar-right">
-                        right
-                    </div>
-                </div>
+                        <Grid.Column className="app-main">
+                            <div className="app-main-widgets">
+                                <NextAction/>
+                                <Sentiment/>
+                            </div>
+                            <div className="app-main-timeline">
+                                <Timeline/>
+                            </div>
+                        </Grid.Column>
+
+                        <Grid.Column className="app-sidebar-right">
+                            right
+                        </Grid.Column>
+
+                    </Grid.Row>
+                </Grid>
             </div>
         );
     }

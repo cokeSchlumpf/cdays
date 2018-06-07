@@ -28,10 +28,6 @@
 }
 
 .app-main-container {
-    display: flex;
-    flex-direction: row;
-    height: calc(100% - (90px + 4px + 30px + 4px));
-    align-items: stretch;
 }
 
 .app-sidebar-left {
@@ -39,11 +35,13 @@
     background: #e7f1f3;
     align-items: flex-start;
     max-width: 22%;
+    padding: 0 !important;
 }
 
 .app-main {
     flex-grow: 2;
     background: #fff;
+    padding: 0 8px !important;
 }
 
 .app-sidebar-right {
@@ -51,13 +49,13 @@
     background: #e7f1f3;
     align-items: flex-start;
     max-width: 22%;
+    padding: 0 !important;
 }
 
 .app-main-widgets {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    padding: 0 6px;
 }
 
 .app-main-widgets .widget {
