@@ -3,6 +3,7 @@ import * as PropTypes from "prop-types";
 
 import './styles.css';
 import DateFormatted from "../DateFormatted/index";
+import { Image } from "semantic-ui-react";
 
 export default class Interests extends React.Component {
 
@@ -17,7 +18,14 @@ export default class Interests extends React.Component {
                 'Reiseversicherung', 'Unfallversicherung'
             ],
             instagram: [
-                // @todo
+                {
+                    img: 'instagram1.png',
+                    labels: ['MTB']
+                },
+                {
+                    img: 'instagram2.png',
+                    labels: ['WET', 'NATURE']
+                }
             ],
             twitter: [
                 {
@@ -37,6 +45,15 @@ export default class Interests extends React.Component {
                 }
             ]
         }
+    }
+
+    renderInstagramPhoto (item, i) {
+        return <div key={`instagram-${i}`} className="photo">
+            <Image src={item.img}/>
+            <div className="tags">
+                {item.labels.map((l, j) => <div className="tag" key={`instagram-${i}-tag-${j}-${l}`}>#{l}</div>)}
+            </div>
+        </div>;
     }
 
     renderInterest (interest, i) {
@@ -73,7 +90,9 @@ export default class Interests extends React.Component {
 
                     <section>
                         <div className="header">Gefunden auf Instagram</div>
-                        @todo...
+                        <div className="instagram">
+                            {this.state.instagram.map(this.renderInstagramPhoto)}
+                        </div>
                     </section>
 
                     <section>

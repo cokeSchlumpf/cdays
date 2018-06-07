@@ -31,3 +31,33 @@
 .app-interests .tweets .tweet {
     margin-bottom: 18px;
 }
+
+.app-interests .instagram {
+    position: relative;
+
+}
+
+.app-interests .instagram .photo {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.app-interests .instagram .photo img {
+    max-height: 140px;
+}
+
+.app-interests .instagram .tags {
+    position: relative;
+    top: -40px;
+    left: 10px;
+}
+
+.app-interests .instagram .tags .tag {
+    background: #fff;
+    font-size: 14px;
+    padding: 4px 8px;
+    color: #000;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
