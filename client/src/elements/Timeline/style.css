@@ -1,0 +1,16 @@
+.timeline {
+
+    position: relative;
+    z-index: 1;
+    margin-top: 70px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 33px;
+    top: 0;
+    width: 2px;
+    background: #ccc;
+    height: calc(100% - 150px);
+}

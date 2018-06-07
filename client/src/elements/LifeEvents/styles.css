@@ -1,0 +1,51 @@
+.app-life-events {
+
+}
+
+.app-life-events .events {
+    margin: 20px;
+    position: relative;
+}
+
+.app-life-events .events::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 69px;
+    border-left: 1px dashed #1b7b8f;
+}
+
+.app-life-events .events .event {
+    position: relative;
+    margin-bottom: 30px;
+    line-height: 20px;
+}
+
+.app-life-events .events .event:last-of-type {
+    margin-bottom: 0;
+}
+
+.app-life-events .events .event .date {
+}
+
+.app-life-events .events .event .title {
+    padding-left: 60px;
+}
+
+.app-life-events .events .event .title::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #1b7b8f;
+    border-radius: 50%;
+    position: absolute;
+    left: 60px;
+}
+
+.app-life-events .events .event .source {
+    float: right;
+    color: #1b7b8f;
+    font-size: 18px;
+    padding-right: 10px;
+}

@@ -12,6 +12,12 @@
     align-items: start;
     padding-left: 16px;
     position: relative;
+    transition: background .2s;
+}
+
+.app-user-contracts .app-user-contracts-item:hover {
+    cursor: pointer;
+    background: #aec2c5;
 }
 
 .app-user-contracts .app-user-contracts-item .icon {
