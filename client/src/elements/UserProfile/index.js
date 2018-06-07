@@ -31,7 +31,7 @@ class UserProfile extends React.Component {
 
     render () {
 
-        return <div className="app-user-profile">
+        return <div className="app-user-profile widget">
 
             <header>KUNDEN - DETAILS</header>
 

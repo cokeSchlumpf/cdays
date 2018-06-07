@@ -38,6 +38,7 @@
     flex-grow: 1;
     background: #e7f1f3;
     align-items: flex-start;
+    max-width: 22%;
 }
 
 .app-main {
@@ -49,5 +50,6 @@
     flex-grow: 1;
     background: #e7f1f3;
     align-items: flex-start;
+    max-width: 22%;
 
 }

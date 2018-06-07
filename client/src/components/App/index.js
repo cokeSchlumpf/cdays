@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 
 import DoodyChat from '../DoodyChat';
 import UserProfile from "../../elements/UserProfile/index";
+import UserContracts from "../../elements/UserContracts/index";
 
 const FixedMenu = () => (
     <Menu fixed='top' size='large'>
@@ -37,6 +38,7 @@ class App extends Component {
                 <div className="app-main-container">
                     <div className="app-sidebar-left">
                         <UserProfile/>
+                        <UserContracts/>
                     </div>
                     <div className="app-main">
                     </div>
