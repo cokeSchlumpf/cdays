@@ -10,7 +10,10 @@
     background-size: auto 70px;
     background-color: #dd2c31;
     background-position: 97% 8px;
-    margin-bottom: 4px;
+    position: fixed;
+    width: 100%;
+    border-bottom: 4px solid white;
+    z-index: 2;
 }
 
 .app-header-logo {
@@ -21,13 +24,20 @@
 }
 
 .app-cases-menu {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    top: 76px;
     background: #117b90;
-    margin-bottom: 4px;
     color: #fff;
     line-height: 30px;
+    border-bottom: 4px solid white;
 }
 
 .app-main-container {
+    position: relative;
+    top: 110px;
+    z-index: 1;
 }
 
 .app-main-container .row {
@@ -81,4 +91,14 @@
 
 .app-main-timeline {
     padding: 20px 30px;
+}
+
+.app-chat-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 370px;
+    height: 530px;
+    z-index: 999;
+    right: 5%;
+    box-shadow: 0 -2px 6px #888;
 }
