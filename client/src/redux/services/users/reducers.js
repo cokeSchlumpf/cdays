@@ -57,11 +57,27 @@ export const initialState = fromJS({
                 {
                     type: 'letter',
                     subject: 'Eingang unterzeichneter Vertrag',
-                    date: '2012-03-10',
-                    agent: 'Sam Schaufelberg',
-                    action: false,
-                    labels: ['Motorradversicherung', 'Vertragseingang']
-                }
+                    date: '2013-03-31',
+                    agent: '-',
+                    action: 'schedule-meeting',
+                    labels: ['Hausratversicherung', 'Vertragseingang']
+                },
+                {
+                    type: 'mail',
+                    subject: 'Schadenmeldung Gesprungenes Handydisplay',
+                    date: '2015-03-31',
+                    agent: '-',
+                    action: 'schedule-meeting',
+                    labels: ['Privathaftpflicht', 'Schadenmeldung', 'Handyschaden']
+                },
+                {
+                    type: 'call',
+                    subject: 'Schadenmeldung Motorrad Hagelschaden',
+                    date: '2015-05-14',
+                    agent: '-',
+                    action: 'schedule-meeting',
+                    labels: ['Motorradversicherung', 'Schadenmeldung', 'Hagelschaden']
+                },
             ],
             actions: [
                 {

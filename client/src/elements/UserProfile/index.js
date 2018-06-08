@@ -12,7 +12,7 @@ class UserProfile extends React.Component {
         this.state = {
             profile: {
                 name: 'Andre Shmid',
-                position: 'IT Consultant',
+                position: 'Automechaniker',
                 addressStreet: 'Bundesgasse 31',
                 addressCity: '3001 Bern',
                 age: '01.01.1990 (28)',

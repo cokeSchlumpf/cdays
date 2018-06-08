@@ -14,12 +14,16 @@ export default class Timeline extends React.Component {
     }
 
     render () {
+
+        const items = this.props.items;
+        items.reverse();
+
         return (
             <div>
                 <h2>Kontakthistorie</h2>
 
                 <div className="timeline">
-                  { _.map(this.props.items, (item, index) => <TimelineEntry key={ `key-${index}` } {...item} />) }
+                  { _.map(items, (item, index) => <TimelineEntry key={ `key-${index}` } {...item} />) }
                 </div>
 
             </div>
