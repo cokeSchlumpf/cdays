@@ -30,18 +30,18 @@ export default class Interests extends React.Component {
             twitter: [
                 {
                     author: 'outdoorandre',
-                    when: '2018-03-17',
+                    when: '2018-04-17',
                     text: 'Ich bin gerade voll Cool in Malta zum Canyoning :D'
                 },
                 {
                     author: 'outdoorandre',
-                    when: '2018-03-17',
-                    text: 'Ich bin gerade voll Cool in Malta zum Canyoning :D'
+                    when: '2018-03-10',
+                    text: 'Heute wieder Maintainbiking in Interlaken - super Wetter!'
                 },
                 {
                     author: 'outdoorandre',
-                    when: '2018-03-17',
-                    text: 'Ich bin gerade voll Cool in Malta zum Canyoning :D'
+                    when: '2018-02-20',
+                    text: 'Muss mal unbedingt wieder aufs Rad steigen - habt ihr Lust am Wochenende?'
                 }
             ]
         }
@@ -82,7 +82,7 @@ export default class Interests extends React.Component {
                     </div>
 
                     <section>
-                        <div className="header">Möglicherweise interessant für ign ...</div>
+                        <div className="header">Möglicherweise interessant für ihn ...</div>
                         <div className="potential">
                             {this.state.potential.map(this.renderInterest)}
                         </div>

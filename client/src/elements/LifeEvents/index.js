@@ -24,7 +24,7 @@ export default class LifeEvents extends React.Component {
                 },
                 {
                     date: '2017-10-16',
-                    title: 'Arbaitet bei IT Hubert',
+                    title: 'Arbeitet bei IT Hubert',
                     source: 'linkedin'
                 }
             ]

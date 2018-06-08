@@ -61,14 +61,6 @@ export const initialState = fromJS({
                     agent: 'Sam Schaufelberg',
                     action: false,
                     labels: ['Motorradversicherung', 'Vertragseingang']
-                },
-                {
-                    type: 'letter',
-                    subject: 'Eingang unterzeichneter Vertrag',
-                    date: '2012-03-10',
-                    agent: 'Sam Schaufelberg',
-                    action: false,
-                    labels: ['Motorradversicherung', 'Vertragseingang']
                 }
             ],
             actions: [

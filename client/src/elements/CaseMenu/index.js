@@ -18,7 +18,7 @@ export default class CaseMenu extends React.Component {
 
                 <div className="cases">
                     <div className="case selected">
-                        <Icon name="user"/> Adnre Schmid
+                        <Icon name="user"/> Andre Schmid
                     </div>
                     <div className="case">
                         <Icon name="user"/> Berthold Lampercht
