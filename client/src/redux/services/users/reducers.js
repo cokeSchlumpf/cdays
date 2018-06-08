@@ -78,6 +78,20 @@ export const initialState = fromJS({
                     description: 'Description...',
                     buttonText: 'Send the offer',
                     action: 'open-chatbot | dismiss'
+                },
+                {
+                    type: 'email',
+                    title: 'second',
+                    description: 'xxxxxxxxx...',
+                    buttonText: 'Send the offer',
+                    action: 'open-chatbot | dismiss'
+                },
+                {
+                    type: 'email',
+                    title: 'third...',
+                    description: 'yyyyyyyyy...',
+                    buttonText: 'Send the offer',
+                    action: 'open-chatbot | dismiss'
                 }
             ]
         }
