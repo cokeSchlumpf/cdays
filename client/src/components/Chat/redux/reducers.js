@@ -2,17 +2,26 @@ import { fromJS } from 'immutable';
 import { types } from './actions';
 
 export const initialState = fromJS({
+  visible: true,
   messages: [],
   settings: {
     onClose: undefined,
     userLabel: 'Sie',
-    botLabel: 'Watson',
-    title: 'Watson - How can I help you today?'
+    botLabel: 'Andre Schmid',
+    title: 'Andre Schmid'
   },
   submitting: false,
   typing: false,
   value: ''
 });
+
+const windowHide = (state, payload) => {
+  return state.setIn(['visible'], false);
+}
+
+const windowShow = (state, payload) => {
+  return state.setIn(['visible'], true);
+}
 
 const botAction = (state, { action }) => {
   switch (action) {
@@ -79,6 +88,10 @@ export default (state = initialState, action) => {
       return userMessageSubmit(state, action.payload);
     case types.USER_MESSAGE_SUBMIT_SUCCESS:
       return userMessageSubmitSuccess(state, action.payload);
+    case types.WINDOW_HIDE:
+      return windowHide(state, action.payload);
+    case types.WINDOW_SHOW:
+      return windowShow(state, action.payload);
     default:
       return state;
   }

@@ -4,6 +4,11 @@ import constantsFromArray from '../../../utils/constants-from-array';
 export const types = constantsFromArray([
   'CONNECT',
   'DISCONNECT',
+
+  'EVENT_TO_CLIENT',
+
+  'EVENT_FROM_CLIENT',
+
   'RECEIVE',
   'REGISTER_CLIENT',
   'SEND',
@@ -17,6 +22,14 @@ export const connect = (socket) => (
 
 export const disconnect = (socket, user_id) => (
   { type: types.DISCONNECT, payload: { socket, user_id } }
+);
+
+export const eventFromClient = (payload) => (
+  { type: types.EVENT_FROM_CLIENT, payload }
+);
+
+export const eventToClient = (payload)  => (
+  { type: types.EVENT_TO_CLIENT, payload, broadcast: true }
 );
 
 export const receive = (user_id, message) => {
@@ -46,6 +59,8 @@ export const sendSuccess = (user_id) => (payload) => (
 export default {
   connect,
   disconnect,
+  eventFromClient,
+  eventToClient,
   receive,
   registerClient,
   send,

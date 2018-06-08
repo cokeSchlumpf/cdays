@@ -3,16 +3,16 @@ import './styles.css';
 import { Button, Container, Grid, Menu, Segment, Visibility } from 'semantic-ui-react';
 import React, { Component } from 'react';
 
+import CaseMenu from "../../elements/CaseMenu/index";
+import Chat from "../Chat";
 import DoodyChat from '../DoodyChat';
-import UserProfile from "../../elements/UserProfile/index";
-import UserContracts from "../../elements/UserContracts/index";
+import Interests from "../../elements/Interests/index";
+import LifeEvents from "../../elements/LifeEvents/index";
 import NextAction from "../NextAction/index";
 import Sentiment from "../Sentiment/index";
-import Timeline from "../../elements/Timeline/index";
-import CaseMenu from "../../elements/CaseMenu/index";
-import LifeEvents from "../../elements/LifeEvents/index";
-import Interests from "../../elements/Interests/index";
-import Chat from "../../components/Chat/index";
+import Timeline from "../Timeline";
+import UserContracts from "../../elements/UserContracts/index";
+import UserProfile from "../../elements/UserProfile/index";
 
 const FixedMenu = () => (
     <Menu fixed='top' size='large'>
@@ -77,9 +77,7 @@ class App extends Component {
                     </Grid.Row>
                 </Grid>
 
-                <div className="app-chat-wrapper">
-                    <Chat/>
-                </div>
+                <Chat/>
 
             </div>
         );

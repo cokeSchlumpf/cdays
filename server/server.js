@@ -117,6 +117,8 @@ io.on('connection', socket => {
 
   socket.on('client_action', msg => {
     if (_.isObject(msg) && _.isString(msg.type) && msg.payload) {
+      console.log(`client_event: ${msg.type}`);
+      
       store.dispatch({
         type: `CLIENT_${msg.type}`,
         payload: _.assign({}, msg.payload, {

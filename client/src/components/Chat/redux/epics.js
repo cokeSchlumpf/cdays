@@ -1,16 +1,24 @@
 import 'rxjs';
 
-import { types } from './actions';
-
-export const submitEpic = (action$, store) => action$
-  .ofType(types.SUBMIT)
-  .mapTo({
-    type: types.SUBMIT_SUCCESS,
-    payload: {
-      foo: 'bar'
-    }
-  });
+import actions, { types } from './actions';
 
 export default [
-  submitEpic
+  (action$, store$) => action$
+    .ofType(types.USER_MESSAGE_SUBMIT)
+    .flatMap(action => {      
+      return [
+        actions.userMessageSubmitSuccess(action.payload.message)
+      ];
+    }),
+  (action$, store$) => action$
+    .ofType(types.USER_MESSAGE_SUBMIT)
+    .flatMap(action => {
+      if (action.payload.message.includes('close')) {
+        return [
+          actions.windowHide()
+        ];
+      } else {
+        return [];
+      }
+    })
 ]

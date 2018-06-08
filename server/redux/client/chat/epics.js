@@ -9,15 +9,6 @@ import winston from 'winston';
 
 export default [
   (action$, store$) => action$
-    .ofType(types.REGISTER_CLIENT)
-    .filter(action => !action.payload.reconnect)
-    .flatMap(action => {
-      return [
-        actions.send({ action: 'page_loaded' }, action.payload.user_id)
-      ]
-    }),
-
-  (action$, store$) => action$
     .ofType(types.SEND)
     .mergeMap(action => {
       if (config.get('environment') !== 'dev') {
@@ -67,6 +58,21 @@ export default [
     .filter(action => {
       console.log(action.payload)
       return false;
+    }),
+
+  (action$, store$) => action$
+    .filter(action => action.broadcast)
+    .flatMap(action => {
+      const sockets = _.values(_.get(store$.getState().toJS(), 'client.chat.sockets_by_user', {}));
+
+      _.each(sockets, socket => {
+        const clientAction = _.assign(
+          {}, _.pick(action, 'action', 'payload'), { type: action.type });
+
+        socket.emit('server_action', clientAction);
+      });
+
+      return [];
     }),
 
   (action$, store$) => action$

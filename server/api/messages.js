@@ -13,14 +13,66 @@ api.post('/', (req, res) => {
   const user_id = req.body.user_id;
   const message = req.body.message;
 
-  if (!user_id || !_.isString(user_id)) {
-    errors.E001_MissingRequiredFields({ user_id: 'string' }).send(res);
-  } else if (!message || (!_.isString(message) && !_.isObject(message))) {
-    errors.E001_MissingRequiredFields({ message: 'string || object' }).send(res);
-  } else {
-    store.dispatch(actions.client.chat.receive(user_id, message))
-    res.sendStatus(200);
-  }
+  store.dispatch(actions.client.chat.eventToClient({ message }));
+  res.sendStatus(200);
 });
+
+api.get('/', (req, res) => {
+  // store.dispatch(actions.client.chat.eventToClient({ message: 'TEST MESSAGE' }));
+
+  store.dispatch(actions.services.users.addTimelineentry('andre', {
+    type: 'letter',
+    subject: 'Eingang unterzeichneter Vertrag',
+    date: '2012-03-10',
+    agent: 'Sam Schaufelberg',
+    action: false,
+    labels: ['Motorradversicherung', 'Vertragseingang']
+  }));
+
+  res.sendStatus(200);
+});
+
+api.get('/user-message', (req, res) => {
+  store.dispatch({
+    type: 'COMPONENTS_CHAT_BOT_MESSAGE',
+    broadcast: true,
+    payload: {
+      message: 'Hello World!',
+      sender: 'Egon Olsen'
+    }
+  });
+
+  store.dispatch({
+    type: 'COMPONENTS_CHAT_BOT_MESSAGE',
+    broadcast: true,
+    payload: {
+      message: 'Hallo lieber Andre!',
+      sender: 'user'
+    }
+  });
+
+  store.dispatch({
+    type: 'COMPONENTS_CHAT_BOT_MESSAGE',
+    broadcast: true,
+    payload: {
+      message: 'Jo!',
+      sender: 'Egon Olsen'
+    }
+  });
+
+  res.sendStatus(200);
+});
+
+api.get('/show-chat', (req, res) => {
+  store.dispatch({
+    type: 'COMPONENTS_CHAT_WINDOW_SHOW',
+    broadcast: true,
+    payload: {}
+  });
+
+  res.sendStatus(200);
+});
+
+
 
 module.exports = api;

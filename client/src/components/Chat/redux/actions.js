@@ -7,8 +7,18 @@ export const types = constantsFromArray([
   'USER_MESSAGE_CHANGE',
   'USER_MESSAGE_SUBMIT',
   'USER_MESSAGE_SUBMIT_FAIL',
-  'USER_MESSAGE_SUBMIT_SUCCESS'
+  'USER_MESSAGE_SUBMIT_SUCCESS',
+  'WINDOW_SHOW',
+  'WINDOW_HIDE'
 ], 'COMPONENTS_CHAT_');
+
+export const windowShow = () => (
+  { type: types.WINDOW_SHOW, payload: {} }
+);
+
+export const windowHide = () => (
+  { type: types.WINDOW_HIDE, payload: {} }
+);
 
 export const botAction = (action) => (
   { type: types.BOT_ACTION, payload: { action } }
@@ -45,5 +55,7 @@ export default {
   userMessageChange,
   userMessageSubmit,
   userMessageSubmitFail,
-  userMessageSubmitSuccess
+  userMessageSubmitSuccess,
+  windowShow,
+  windowHide
 }

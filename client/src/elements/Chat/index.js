@@ -18,8 +18,8 @@ class Chat extends Component {
       typing: false,
       messages: [],
       submitting: false,
-      title: 'Watson - How can I help you?',
-      userLabel: 'Sie',
+      title: 'Andre Schmid',
+      userLabel: 'Agent',
       value: '',
 
       onClose: undefined,
@@ -118,27 +118,29 @@ class Chat extends Component {
     }, 300);
 
     return (
-      <div className={cx('chat-container', this.props.className)}>
-        <div className="chat-header">
-          <Icon name='circle' size='small' /> {this.props.title}
+      <div className="app-chat-wrapper" style={{ display: this.props.visible ? 'block' : 'none' }}>
+        <div className={cx('chat-container', this.props.className)}>
+          <div className="chat-header">
+            <Icon name='circle' size='small' /> {this.props.title}
 
-          {_.isFunction(this.props.onClose) &&
-            <Button className='button-close' icon basic circular onClick={ onCloseHandler }>
-              <Icon name='close' />
-            </Button>
-          }
-        </div>
-        <div className="chat-messages">
-          {messages}
+            {_.isFunction(this.props.onClose) &&
+              <Button className='button-close' icon basic circular onClick={ onCloseHandler }>
+                <Icon name='close' />
+              </Button>
+            }
+          </div>
+          <div className="chat-messages">
+            {messages}
 
-          {_.size(messages) > 0 && <Divider key='divider-latest-message' horizontal><FormattedRelative value={_.last(this.props.messages).time || new Date()} /></Divider>}
+            {_.size(messages) > 0 && <Divider key='divider-latest-message' horizontal><FormattedRelative value={_.last(this.props.messages).time || new Date()} /></Divider>}
 
-          {this.props.typing && <div className="typing"><img src={loader} alt="..." /></div>}
-        </div>
-        <div className="chat-input">
-          <Form onSubmit={onSubmitHandler}>
-            <InputText value={this.props.value} submitting={this.props.submitting} onChange={onChangeHandler} />
-          </Form>
+            {this.props.typing && <div className="typing"><img src={loader} alt="..." /></div>}
+          </div>
+          <div className="chat-input">
+            <Form onSubmit={onSubmitHandler}>
+              <InputText value={this.props.value} submitting={this.props.submitting} onChange={onChangeHandler} />
+            </Form>
+          </div>
         </div>
       </div>);
   }
