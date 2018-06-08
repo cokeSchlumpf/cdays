@@ -50,41 +50,111 @@ import { types } from './actions';
 */
 
 export const initialState = fromJS({
-  current_user: 'andre',
-  users: {
-    andre: {
-      history: [
-        {
-          type: 'letter',
-          subject: 'Eingang unterzeichneter Vertrag',
-          date: '2012-03-10',
-          agent: 'Sam Schaufelberg',
-          action: false,
-          labels: ['Motorradversicherung', 'Vertragseingang']
-        },
-        {
-          type: 'letter',
-          subject: 'Eingang unterzeichneter Vertrag',
-          date: '2012-03-10',
-          agent: 'Sam Schaufelberg',
-          action: false,
-          labels: ['Motorradversicherung', 'Vertragseingang']
+    current_user: 'andre',
+    users: {
+        andre: {
+            history: [
+                {
+                    type: 'letter',
+                    subject: 'Eingang unterzeichneter Vertrag',
+                    date: '2012-03-10',
+                    agent: 'Sam Schaufelberg',
+                    action: false,
+                    labels: ['Motorradversicherung', 'Vertragseingang']
+                },
+                {
+                    type: 'letter',
+                    subject: 'Eingang unterzeichneter Vertrag',
+                    date: '2012-03-10',
+                    agent: 'Sam Schaufelberg',
+                    action: false,
+                    labels: ['Motorradversicherung', 'Vertragseingang']
+                }
+            ],
+            actions: [
+                {
+                    type: 'email',
+                    title: 'Unfallversicherung anbieten',
+                    description: 'Der Kunde ist aktiv im Outdoor-Sport, Interesse an Unfallversicherung prüfen',
+                    buttonText: 'Termin vereinbaren',
+                    action: 'schedule-meeting'
+                }
+            ]
         }
-      ]
     }
-  }
 });
 
 const addTimelineentry = (state, { item, user }) => {
-  return state
-    .updateIn(['users', user, 'history'], history => history.insert(item, 0));
+
+    let actionItem;
+
+    switch (item.action) {
+        case 'check-coverage':
+            actionItem = {
+                type: 'email',
+                title: 'Hausratdeckung prüfen',
+                description: 'Der Kunde ist umgezogen, Aktualität der Hausratdeckung prüfen',
+                buttonText: 'Anfrage senden',
+                action: 'check-coverage'
+            };
+            break;
+        case 'resend-coverage':
+            actionItem = {
+                type: 'email',
+                title: 'Hausratprüfung erinnern',
+                description: 'Der Kunde ist zur Erfassung zu versichernder Objekte aufgefordert, ggf. nachfassen.',
+                buttonText: 'Erinnerung senden',
+                action: 'resend-coverage'
+            };
+            break;
+        case 'contact-change':
+            actionItem = {
+                type: 'email',
+                title: 'Hausratversicherung umstellen',
+                description: 'Der Kunde möchte einen Fernseher mitversichern. Umstellung auf Hausrat Comfort anbieten',
+                buttonText: 'Kunde kontaktieren',
+                action: 'contact-change'
+            };
+            break;
+        case 'create-offer':
+            actionItem = {
+                type: 'email',
+                title: 'Angebot Hausrat Comfort',
+                description: 'Angebot Hausrat Comfort erstellen und senden',
+                buttonText: 'Angebot erstellen',
+                action: 'create-offer'
+            };
+            break;
+        case 'resend-offer':
+            actionItem = {
+                type: 'email',
+                title: 'Angebot Hausrat Comfort erinnern',
+                description: 'Angebot gesendet, ggf. nachfassen',
+                buttonText: 'Kunde kontaktieren',
+                action: 'resend-offer'
+            };
+            break;
+        case 'schedule-meeting':
+            actionItem = {
+                type: 'email',
+                title: 'Unfallversicherung anbieten',
+                description: 'Der Kunde ist aktiv im Outdoor-Sport, Interesse an Unfallversicherung prüfen',
+                buttonText: 'Termin vereinbaren',
+                action: 'schedule-meeting'
+            };
+            break;
+    }
+
+    return state
+        .updateIn(['users', user, 'history'], history => history.insert(item, 0))
+        .updateIn(['users', user, 'actions'], actions => actions.push(actionItem))
 }
 
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case types.ADD_TIMELINEENTRY:
-      return addTimelineentry(state, action.payload);
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case types.ADD_TIMELINEENTRY:
+            return addTimelineentry(state, action.payload);
+        default:
+            return state;
+    }
 };
