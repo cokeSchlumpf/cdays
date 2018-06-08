@@ -28,10 +28,10 @@
       "verify_token": "af10ccfc40",
       "access_token": "EAAdKQ8xVXVABAPIgURL4kSWSu9gNWV3uIAAJOMKJd2ZCa8X0Q6RfmjeX8ZCV710gCRgM04kAUfZBm9R70uWAQJ2E8BplXPcV9OL8cgwQPFBnHZC49193sW08aKEGYt5OPTax3dGOcZBbTORI10qhndV4XbCkBis5lxjrPWtSWJAZDZD"
     },
-	"cloudant": {
-	      "database": "facebook_connector_db",
-	      "url": "https://4a656eea-b092-43bc-b42f-d80086c79943-bluemix:e6e3f610039d061a7a5d17f2f56a52dd76d11a8669881f4690fe892dbdffbc5a@4a656eea-b092-43bc-b42f-d80086c79943-bluemix.cloudant.com"
-	},
+    "cloudant": {
+      "database": "cdays-bot_db",
+      "url": "https://c59b6cec-9d6b-4014-9090-72480e9e306d-bluemix:351c31df4b375ebef39ce5c4c95f0e6a550f4f4285c2ec45f217cb59445aa45c@c59b6cec-9d6b-4014-9090-72480e9e306d-bluemix.cloudant.com"
+    },
     "messages_transformer": "cdays-bot-ext/core-transform-signals",
     "messages": {
       "$action": "cdays-bot-ext/messages"
@@ -61,7 +61,10 @@
                     }
                   },
                   {
-                    "action": "middleware-wcs-actions"
+                    "action": "cdays-bot-ext/middleware-wcs-actions"
+                  },
+                  {
+                    "action": "middleware-output-send"
                   }
                 ]
               }

@@ -77,7 +77,7 @@ export const initialState = fromJS({
 
 const addTimelineentry = (state, { item, user }) => {
   return state
-    .updateIn(['users', user, 'history'], history => history.push(item));
+    .updateIn(['users', user, 'history'], history => history.insert(item, 0));
 }
 
 export default (state = initialState, action) => {

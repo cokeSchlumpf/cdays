@@ -2,18 +2,22 @@ const _ = require('lodash');
 const rp = require('request-promise');
 
 const addresscheck = (params) => {
-  const adresse = _.get(params, 'payload.conversationcontext.services.wcs.adresse');
+  const intents = JSON.stringify(_.get(params, 'payload.context.services.wcs.intents', []));
+  const adresse = intents.includes("\"Adresse\"");
 
-  if (adresse && adresse.length > 0) {
+  console.log(intents);
+
+  if (adresse) {
+    console.log("Action Address Change")
     _.set(params, 'payload.conversationcontext.agent', true);
-    _.unset(params, 'payload.conversationcontext.services.wcs.adresse');
+    _.set(params, 'payload.conversationcontext.services.wcs.adresse', '');
 
     const options = {
       uri: `https://${params.config.cdays.api}/api/v1/messages/add-item-andre`,
       method: 'POST',
       json: {
         type: 'chat',
-        subject: `Adressänderung: ${adresse}`,
+        subject: `Adressänderung: ${params.payload.input.message}`,
         date: '2018-06-08',
         agent: 'Virtual Agent - Facebook Messenger',
         action: false,

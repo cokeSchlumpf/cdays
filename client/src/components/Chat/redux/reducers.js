@@ -2,7 +2,7 @@ import { fromJS } from 'immutable';
 import { types } from './actions';
 
 export const initialState = fromJS({
-  visible: true,
+  visible: false,
   messages: [],
   settings: {
     onClose: undefined,
