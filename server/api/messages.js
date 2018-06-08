@@ -89,6 +89,22 @@ api.get('/show-chat', (req, res) => {
   res.sendStatus(200);
 });
 
+api.get('/show-chat-message', (req, res) => {
+  store.dispatch({
+    type: 'COMPONENTS_CHAT_WINDOW_SHOW',
+    broadcast: true,
+    payload: {}
+  });
+
+  store.dispatch({
+    type: 'COMPONENTS_CHAT_WINDOW_SHOW',
+    broadcast: true,
+    payload: {}
+  });
+
+  res.sendStatus(200);
+});
+
 
 
 module.exports = api;
