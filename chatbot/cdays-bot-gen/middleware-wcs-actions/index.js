@@ -9,7 +9,6 @@ const addresscheck = (params) => {
 
   if (adresse) {
     console.log("Action Address Change")
-    _.set(params, 'payload.conversationcontext.agent', true);
     _.set(params, 'payload.conversationcontext.services.wcs.adresse', '');
 
     const options = {
@@ -17,11 +16,11 @@ const addresscheck = (params) => {
       method: 'POST',
       json: {
         type: 'chat',
-        subject: `Adressänderung: ${params.payload.input.message}`,
-        date: '2018-06-08',
-        agent: 'Virtual Agent - Facebook Messenger',
-        action: false,
-        labels: ['Adressänderung', 'Vertrag Allgemein']
+        subject: 'Adresse geändert',
+        date: '2012-06-08',
+        agent: 'Virtual Agent',
+        action: 'check-coverage',
+        labels: ['Adressänderung']
       }
     };
 
@@ -31,6 +30,14 @@ const addresscheck = (params) => {
   } else {
     return Promise.resolve(params);
   }
+}
+
+const switchagent = (params) => {
+  if (_.trim(_.get(params, 'payload.input.message', '')).toLocaleLowerCase() === 'ok') {
+    _.set(params, 'payload.conversationcontext.agent', true);
+  }
+
+  return Promise.resolve(params);
 }
 
 const sendusermessagebackend = (params) => {
@@ -66,6 +73,7 @@ const sendagentmessagebackend = (params) => {
 exports.main = (params) => {
   return Promise.resolve(params)
     .then(addresscheck)
+    .then(switchagent)
     .then(sendusermessagebackend)
     .then(sendagentmessagebackend)
     .then(params => ({
