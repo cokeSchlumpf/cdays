@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
   const current = s.services.users.current_user;
 
   return {
-    items: s.services.users.users[current].history.reverse()
+    items: s.services.users.users[current].history
   }
 }
 
