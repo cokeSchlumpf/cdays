@@ -74,24 +74,10 @@ export const initialState = fromJS({
             actions: [
                 {
                     type: 'email',
-                    title: 'Title...',
-                    description: 'Description...',
-                    buttonText: 'Send the offer',
-                    action: 'open-chatbot | dismiss'
-                },
-                {
-                    type: 'email',
-                    title: 'second',
-                    description: 'xxxxxxxxx...',
-                    buttonText: 'Send the offer',
-                    action: 'open-chatbot | dismiss'
-                },
-                {
-                    type: 'email',
-                    title: 'third...',
-                    description: 'yyyyyyyyy...',
-                    buttonText: 'Send the offer',
-                    action: 'open-chatbot | dismiss'
+                    title: 'Unfallversicherung anbieten',
+                    description: 'Der Kunde ist aktiv im Outdoor-Sport, Interesse an Unfallversicherung prüfen',
+                    buttonText: 'Termin vereinbaren',
+                    action: 'schedule-meeting'
                 }
             ]
         }
@@ -99,8 +85,68 @@ export const initialState = fromJS({
 });
 
 const addTimelineentry = (state, { item, user }) => {
+
+    let actionItem;
+    switch (item.action) {
+        case 'check-coverage':
+            actionItem = {
+                type: 'email',
+                title: 'Hausratdeckung prüfen',
+                description: 'Der Kunde ist umgezogen, Aktualität der Hausratdeckung prüfen',
+                buttonText: 'Anfrage senden',
+                action: 'check-coverage'
+            };
+            break;
+        case 'resend-coverage':
+            actionItem = {
+                type: 'email',
+                title: 'Hausratprüfung erinnern',
+                description: 'Der Kunde ist zur Erfassung zu versichernder Objekte aufgefordert, ggf. nachfassen.',
+                buttonText: 'Erinnerung senden',
+                action: 'resend-coverage'
+            };
+            break;
+        case 'contact-change':
+            actionItem = {
+                type: 'email',
+                title: 'Hausratversicherung umstellen',
+                description: 'Der Kunde möchte einen Fernseher mitversichern. Umstellung auf Hausrat Comfort anbieten',
+                buttonText: 'Kunde kontaktieren',
+                action: 'contact-change'
+            };
+            break;
+        case 'create-offer':
+            actionItem = {
+                type: 'email',
+                title: 'Angebot Hausrat Comfort',
+                description: 'Angebot Hausrat Comfort erstellen und senden',
+                buttonText: 'Angebot erstellen',
+                action: 'create-offer'
+            };
+            break;
+        case 'resend-offer':
+            actionItem = {
+                type: 'email',
+                title: 'Angebot Hausrat Comfort erinnern',
+                description: 'Angebot gesendet, ggf. nachfassen',
+                buttonText: 'Kunde kontaktieren',
+                action: 'resend-offer'
+            };
+            break;
+        case 'schedule-meeting':
+            actionItem = {
+                type: 'email',
+                title: 'Unfallversicherung anbieten',
+                description: 'Der Kunde ist aktiv im Outdoor-Sport, Interesse an Unfallversicherung prüfen',
+                buttonText: 'Termin vereinbaren',
+                action: 'schedule-meeting'
+            };
+            break;
+    }
+
     return state
-        .updateIn(['users', user, 'history'], history => history.push(item));
+        .updateIn(['users', user, 'history'], history => history.push(item))
+        .updateIn(['users', user, 'actions'], actions => actions.push(actionItem))
 }
 
 export default (state = initialState, action) => {

@@ -47,7 +47,7 @@ api.get('/', (req, res) => {
                 subject: 'Adresse geändert',
                 date: '2012-06-08',
                 agent: 'Virtual Agent',
-                action: false,
+                action: 'check-coverage',
                 labels: ['Adressänderung']
             };
             break;
@@ -57,7 +57,7 @@ api.get('/', (req, res) => {
                 subject: 'Prüfung der zu versichernden Objekte',
                 date: '2012-06-08',
                 agent: 'Virtual Agent',
-                action: false,
+                action: 'resend-coverage',
                 labels: ['Deckungsprüfung', 'Hausratversicherung']
             };
             break;
@@ -67,7 +67,7 @@ api.get('/', (req, res) => {
                 subject: 'AW: Prüfung der zu versichernden Objekte',
                 date: '2012-06-08',
                 agent: '-',
-                action: false,
+                action: 'contact-change',
                 labels: ['Deckungsprüfung', 'Hausratversicherung']
             };
             break;
@@ -77,7 +77,7 @@ api.get('/', (req, res) => {
                 subject: 'Kundengespräch Hausrat Comfort',
                 date: '2012-06-08',
                 agent: 'Menderes, Katharina',
-                action: false,
+                action: 'create-offer',
                 labels: ['Anfrage', 'Hausratversicherung']
             };
             break;
@@ -87,7 +87,7 @@ api.get('/', (req, res) => {
                 subject: 'Angebot Hausrat Comfort',
                 date: '2012-06-08',
                 agent: 'Menderes, Katharina',
-                action: false,
+                action: 'resend-offer',
                 labels: ['Angebot', 'Hausratversicherung']
             };
             break;
@@ -97,7 +97,7 @@ api.get('/', (req, res) => {
                 subject: 'Eingang Angebot Hausrat Comfort',
                 date: '2012-06-08',
                 agent: 'Menderes, Katharina',
-                action: false,
+                action: 'schedule-meeting',
                 labels: ['Angebot', 'Hausratversicherung']
             };
             break;

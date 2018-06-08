@@ -15,6 +15,12 @@ export default class NextAction extends React.Component {
         this.onPaginationItemClick = this.onPaginationItemClick.bind(this);
     }
 
+    componentWillReceiveProps (nextProps) {
+        this.setState({
+            currentItemIndex: nextProps.items.length - 1
+        })
+    }
+
     onPaginationItemClick (index) {
         this.setState({
             currentItemIndex: index
