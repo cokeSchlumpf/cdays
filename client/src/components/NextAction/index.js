@@ -3,9 +3,13 @@ import actions from './redux/actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
-    // const s = state.toJS();
-    // return s.components.nextAction;
-    return {};
+    const s = state.toJS();
+
+    const current = s.services.users.current_user;
+
+    return {
+        items: s.services.users.users[current].actions
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {

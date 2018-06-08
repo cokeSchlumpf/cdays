@@ -50,41 +50,50 @@ import { types } from './actions';
 */
 
 export const initialState = fromJS({
-  current_user: 'andre',
-  users: {
-    andre: {
-      history: [
-        {
-          type: 'letter',
-          subject: 'Eingang unterzeichneter Vertrag',
-          date: '2012-03-10',
-          agent: 'Sam Schaufelberg',
-          action: false,
-          labels: ['Motorradversicherung', 'Vertragseingang']
-        },
-        {
-          type: 'letter',
-          subject: 'Eingang unterzeichneter Vertrag',
-          date: '2012-03-10',
-          agent: 'Sam Schaufelberg',
-          action: false,
-          labels: ['Motorradversicherung', 'Vertragseingang']
+    current_user: 'andre',
+    users: {
+        andre: {
+            history: [
+                {
+                    type: 'letter',
+                    subject: 'Eingang unterzeichneter Vertrag',
+                    date: '2012-03-10',
+                    agent: 'Sam Schaufelberg',
+                    action: false,
+                    labels: ['Motorradversicherung', 'Vertragseingang']
+                },
+                {
+                    type: 'letter',
+                    subject: 'Eingang unterzeichneter Vertrag',
+                    date: '2012-03-10',
+                    agent: 'Sam Schaufelberg',
+                    action: false,
+                    labels: ['Motorradversicherung', 'Vertragseingang']
+                }
+            ],
+            actions: [
+                {
+                    type: 'email',
+                    title: 'Title...',
+                    description: 'Description...',
+                    buttonText: 'Send the offer',
+                    action: 'open-chatbot | dismiss'
+                }
+            ]
         }
-      ]
     }
-  }
 });
 
 const addTimelineentry = (state, { item, user }) => {
-  return state
-    .updateIn(['users', user, 'history'], history => history.push(item));
+    return state
+        .updateIn(['users', user, 'history'], history => history.push(item));
 }
 
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case types.ADD_TIMELINEENTRY:
-      return addTimelineentry(state, action.payload);
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case types.ADD_TIMELINEENTRY:
+            return addTimelineentry(state, action.payload);
+        default:
+            return state;
+    }
 };
