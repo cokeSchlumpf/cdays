@@ -63,9 +63,6 @@ export default class TimelineEntry extends React.Component {
                             <div>
                                 <DateFormatted date={this.props.date} format='MMMM Do YYYY, h:mm:ss a'/>
                             </div>
-                            <div className="actions">
-                                {this.props.action ? this.renderActionButton() : null}
-                            </div>
                         </div>
                     </div>
 
@@ -84,7 +81,6 @@ export default class TimelineEntry extends React.Component {
 }
 
 TimelineEntry.defaultProps = {
-    action: false,
     labels: []
 };
 
@@ -92,7 +88,6 @@ TimelineEntry.propTypes = {
     type: PropTypes.string.isRequired,
     subject: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-    action: PropTypes.bool.isRequired,
     agent: PropTypes.string.isRequired,
     labels: PropTypes.array
 };
