@@ -5,17 +5,15 @@ const openwhisk = require('openwhisk');
 exports.main = (params) => {
   const ow = openwhisk();
   
-  if (params.payload.input.message.includes("agent")) {
+  if (_.get(params, 'payload.conversationcontext.agent', false)) {
     const options = {
-      uri: `https://${params.config.cdays.api}/api/v1/messages`,
+      uri: `https://${params.config.cdays.api}/api/v1/messages/message`,
       method: 'POST',
       json: {
-        user_id: params.payload.input.user,
-        message: params.payload.input.message
+        message: _.get(params, 'payload.input.message', ''),
+        sender: 'Andre Schmid'
       }
     };
-
-    console.log(JSON.stringify(params.payload, null, 2));
 
     return rp(options).then(response => {
       return {
@@ -26,7 +24,7 @@ exports.main = (params) => {
       return {
         statusCode: 400,
         error: {
-          message: 'Unable to send action to Facebook.',
+          message: 'Unable to send message to backend.',
           parameters: {
             error,
             options
@@ -41,7 +39,7 @@ exports.main = (params) => {
       result: true,
       params: {
         payload: params.payload,
-        middleware: params.config.middleware_wcs
+        middleware: params.middleware
       }
     };
 

@@ -37,52 +37,44 @@
       "$action": "cdays-bot-ext/messages"
     },
     "middleware": [
-	  {
-		"action": "middleware-user-load"
-	  },
-	  {
-		"action": "middleware-context-load"
-	  },
-	  {
-        "action": "cdays-bot-ext/middleware-timeofday",
-        "parameters": {}
+      {
+        "action": "middleware-user-load"
       },
-      { 
-        "action": "middleware-static-message",
+	    {
+		    "action": "middleware-context-load"
+      },
+      {
+        "action": "cdays-bot-ext/middleware-reset",
         "parameters": {
-          "message": "Hello World!"
+          "middleware": [
+            {
+              "action": "cdays-bot-ext/middleware-agent-sendto",
+              "parameters": {
+                "middleware": [
+                  { 
+                    "action": "middleware-services-wcs",
+                    "parameters": {
+                      "endpoint": "https://gateway-fra.watsonplatform.net/assistant/api",
+                      "workspace": "df6d7df0-1c85-4a56-84f9-698a5970763b",
+                      "username": "f606fcee-cc2b-4662-82bd-b135e9161661",
+                      "password": "sKIdauAgGZiT"
+                    }
+                  },
+                  {
+                    "action": "middleware-wcs-actions"
+                  }
+                ]
+              }
+            }
+          ]
         }
       },
       {
-        "action": "cdays-bot-ext/middleware-agent-sendto",
-        "parameters": {}
-      },
-	  {
-	    "action": "middleware-context-persist"
-	  }
-    ],
-    "middleware_wcs": [
-  	  {
-  		"action": "middleware-user-load"
-  	  },
-  	  {
-  		"action": "middleware-context-load"
-  	  },
-      { 
-        "action": "middleware-services-wcs",
-        "parameters": {
-          "endpoint": "https://gateway-fra.watsonplatform.net/assistant/api",
-          "workspace": "df6d7df0-1c85-4a56-84f9-698a5970763b",
-          "username": "f606fcee-cc2b-4662-82bd-b135e9161661",
-          "password": "sKIdauAgGZiT"
-        }
+        "action": "middleware-user-persist"
       },
       {
-        "action": "middleware-output-send"
-      },
-	  {
-	    "action": "middleware-context-persist"
-	  }
+        "action": "middleware-context-persist"
+      }
     ],
     "openwhisk": {
       "package": "cdays-bot",

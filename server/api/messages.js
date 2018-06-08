@@ -17,6 +17,22 @@ api.post('/', (req, res) => {
   res.sendStatus(200);
 });
 
+api.post('/message', (req, res) => {
+  store.dispatch({
+    type: 'COMPONENTS_CHAT_BOT_MESSAGE',
+    broadcast: true,
+    payload: req.body
+  });
+
+  res.sendStatus(200);
+});
+
+api.post('/add-item-andre', (req, res) => {
+  store.dispatch(actions.services.users.addTimelineentry('andre', req.body));
+
+  res.sendStatus(200);
+});
+
 api.get('/', (req, res) => {
   // store.dispatch(actions.client.chat.eventToClient({ message: 'TEST MESSAGE' }));
 
