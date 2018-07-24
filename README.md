@@ -2,6 +2,8 @@
 
 curl https://cdays.eu-de.mybluemix.net/api/v1/messages?id=1
 
+curl http://localhost:3010/api/v1/messages?id=1
+
 # Prüfung der zu versichernden Objekte
 curl https://cdays.eu-de.mybluemix.net/api/v1/messages?id=2
 

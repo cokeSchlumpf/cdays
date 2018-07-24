@@ -154,7 +154,7 @@ const addTimelineentry = (state, { item, user }) => {
     }
 
     return state
-        .updateIn(['users', user, 'history'], history => history.insert(item, 0))
+        .updateIn(['users', user, 'history'], history => history.push(item))
         .updateIn(['users', user, 'actions'], actions => actions.push(actionItem))
 }
 
